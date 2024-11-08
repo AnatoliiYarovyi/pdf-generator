@@ -1,4 +1,4 @@
-FROM node:22-slim as build
+FROM node:20-slim as build
 
 WORKDIR /app
 COPY . .
@@ -7,7 +7,7 @@ ENV YARN_CACHE_FOLDER=/root/.yarn
 RUN yarn install --frozen-lockfile
 RUN yarn build
 
-FROM --platform=linux/amd64 node:22-slim
+FROM --platform=linux/amd64 node:20-slim
 COPY --from=build /app/dist dist
 COPY --from=build /app/puppeteer.config.cjs puppeteer.config.cjs
 
