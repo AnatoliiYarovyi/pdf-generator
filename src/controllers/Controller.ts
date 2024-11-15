@@ -19,6 +19,8 @@ export abstract class Controller {
       try {
         await route(req, res, next);
       } catch (error: any) {
+        console.log(error);
+
         return next();
       }
     };
