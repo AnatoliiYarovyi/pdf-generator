@@ -27,6 +27,12 @@ export class PdfService {
       format: 'A4', // Формат сторінки
       printBackground: true, // Включає фон та кольори стилів
       preferCSSPageSize: true, // Враховує розміри сторінок, задані CSS
+      margin: {
+        top: '50px', // Відступ під верхній колонтитул
+        bottom: '50px', // Відступ під нижній колонтитул
+        left: '20px',
+        right: '20px',
+      },
     });
 
     // Закрываем браузер
