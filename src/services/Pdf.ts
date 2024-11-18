@@ -23,7 +23,11 @@ export class PdfService {
     await page.setContent(template);
 
     // Создаем PDF-файл
-    const pdfFile = await page.pdf();
+    const pdfFile = await page.pdf({
+      format: 'A4', // Формат сторінки
+      printBackground: true, // Включає фон та кольори стилів
+      preferCSSPageSize: true, // Враховує розміри сторінок, задані CSS
+    });
 
     // Закрываем браузер
     await browser.close();
