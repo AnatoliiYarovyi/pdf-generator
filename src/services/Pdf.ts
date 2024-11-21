@@ -1,11 +1,15 @@
 import 'dotenv/config';
+import { join } from 'path';
 import puppeteer from 'puppeteer';
 
 export class PdfService {
   async generatePdf(template: string) {
+    const executablePath = join(__dirname, '.cache', 'puppeteer') || '/usr/bin/chromium';
+    console.log('executablePath', executablePath);
+
     const browser = await puppeteer.launch({
       headless: true,
-      executablePath: '/usr/bin/chromium',
+      executablePath,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
