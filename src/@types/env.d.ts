@@ -8,6 +8,7 @@
 declare namespace NodeJS {
   export interface ProcessEnv {
     PORT: string;
+    STAGE: 'local' | undefined;
     API_KEY_TRY_CATCH_CLOUD: string;
   }
 }
