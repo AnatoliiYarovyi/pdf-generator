@@ -34,8 +34,7 @@ RUN apt-get update && apt-get install -y \
     xdg-utils \
     && rm -rf /var/lib/apt/lists/*
 
-RUN yarn add puppeteer \
-    && npx puppeteer browsers install chrome
+RUN yarn add puppeteer
 
 EXPOSE 5000
 
