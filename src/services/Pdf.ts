@@ -5,6 +5,7 @@ export class PdfService {
   async generatePdf(template: string) {
     const browser = await puppeteer.launch({
       headless: true,
+      executablePath: '/usr/bin/chromium',
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
