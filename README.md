@@ -1,3 +1,3 @@
-# pdf-generator-ptrk.fm
+# pdf-generator
 
-pdf-generator-ptrk.fm
+pdf-generator
