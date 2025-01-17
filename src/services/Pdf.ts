@@ -5,7 +5,9 @@ import puppeteer from 'puppeteer';
 export class PdfService {
   async generatePdf(template: string) {
     const executablePath =
-      process.env.STAGE === 'local' ? join(__dirname, '.cache', 'puppeteer') : '/usr/bin/chromium';
+      process.env.STAGE === 'local'
+        ? join(__dirname, '.cache', 'puppeteer')
+        : process.env.CHROME_BIN;
     console.log('executablePath', executablePath);
 
     const browser = await puppeteer.launch({
